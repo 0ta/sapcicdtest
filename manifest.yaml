@@ -1,0 +1,17 @@
+---
+applications:
+- name: otacicdtest
+  buildpack: sap_java_buildpack
+  path: ./target/cicdtesthello-0.0.1-SNAPSHOT.jar
+  env:
+    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+#    JBP_CONFIG_JAVA_OPTS: "[java_opts: '-javaagent:/home/vcap/app/BOOT-INF/classes/oldopentelemetryjavaagent.jar -Dotel.exporter.otlp.endpoint=https://ingest-otlp-sf-8778256c-16ac-4444-85b7-512844777a05.cls-05.cloud.logs.services.eu10.hana.ondemand.com:443 -Dotel.exporter.otlp.certificate=/home/vcap/app/BOOT-INF/classes/otlpservercert.pem -Dotel.exporter.otlp.client.certificate=/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem -Dotel.exporter.otlp.client.key=/home/vcap/app/BOOT-INF/classes/otlpclientkey.pem']"
+#    JBP_CONFIG_JAVA_OPTS: "[java_opts: '-javaagent:/home/vcap/app/BOOT-INF/classes/newrelic.jar']"    
+#    JBP_CONFIG_JAVA_OPTS: "[java_opts: '-javaagent:/home/vcap/app/BOOT-INF/classes/opentelemetry-javaagent.jar -Dotel.exporter.otlp.endpoint=ingest-mtls-sf-59ff8095-c848-454e-a9ef-bad7b0356594.cls-13.cloud.logs.services.eu10.hana.ondemand.com -Dotel.exporter.otlp.client.certificate=/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem -Dotel.exporter.otlp.client.key=/home/vcap/app/BOOT-INF/classes/otlpclient.key']"
+#    JBP_CONFIG_JAVA_OPTS: 'java_opts: ''-javaagent:"/home/vcap/app/BOOT-INF/classes/opentelemetry-javaagent.jar" -Dotel.exporter.otlp.endpoint=ingest-mtls-sf-59ff8095-c848-454e-a9ef-bad7b0356594.cls-13.cloud.logs.services.eu10.hana.ondemand.com -Dotel.exporter.otlp.client.certificate=/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem -Dotel.exporter.otlp.client.key=/home/vcap/app/BOOT-INF/classes/otlpclient.key'''
+#    JBP_CONFIG_JAVA_OPTS: '[java_opts: "-javaagent:''/home/vcap/app/BOOT-INF/classes/opentelemetry-javaagent.jar'' -Dotel.exporter.otlp.endpoint=ingest-mtls-sf-59ff8095-c848-454e-a9ef-bad7b0356594.cls-13.cloud.logs.services.eu10.hana.ondemand.com -Dotel.exporter.otlp.client.certificate=/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem -Dotel.exporter.otlp.client.key=/home/vcap/app/BOOT-INF/classes/otlpclient.key"]'
+#    JBP_CONFIG_JAVA_OPTS: '[java_opts: ''-javaagent=/home/vcap/app/BOOT-INF/classes/opentelemetry-javaagent.jar -Dotel.exporter.otlp.endpoint="ingest-mtls-sf-59ff8095-c848-454e-a9ef-bad7b0356594.cls-13.cloud.logs.services.eu10.hana.ondemand.com" -Dotel.exporter.otlp.client.certificate="/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem" -Dotel.exporter.otlp.client.key="/home/vcap/app/BOOT-INF/classes/otlpclient.key"'']'
+#    JBP_CONFIG_JAVA_OPTS: "[java_opts: '-javaagent:/home/vcap/app/BOOT-INF/classes/opentelemetry-javaagent.jar -Dotel.exporter.otlp.endpoint="ingest-mtls-sf-59ff8095-c848-454e-a9ef-bad7b0356594.cls-13.cloud.logs.services.eu10.hana.ondemand.com" -Dotel.exporter.otlp.client.certificate="/home/vcap/app/BOOT-INF/classes/otlpclientcert.pem" -Dotel.exporter.otlp.client.key="/home/vcap/app/BOOT-INF/classes/otlpclient.key"'']
+    JBP_CONFIG_SAP_MACHINE_JDK: '{ version: 17.+ }'
+#    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
+#    JBP_CONFIG_SAP_MACHINE_JRE: '{ use_offline_repository: false, version: 17.0.7 }'
